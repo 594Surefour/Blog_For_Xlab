@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav {
+  display: inline;
+}
+
+nav a {
+  color: #fff;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
