@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Post 1 Title - My Blog</title>
+</head>
+<body>
+  <header>
+    <h1>LiZeHao Blog</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h3>二叉树的前序遍历</h3>
+      <p>
+        <pre>
+            <code>
+                vector preorder(TreeNode *t) {
+                    vector<int> res;
+                    if(root == NULL)
+                        return res;
+                    stack<TreeNode *> s;
+                    while(!s.empty() || root!=nullptr){
+                        while(root != NULL) //一直往左下方遍历 {
+                            res.push_back(root->val); //先把根节点的值加入res 
+                            s.push(root); //把根节点加入栈
+                            root = root->left; //往左子树走
+                        }
+                        //遍历到没有左子树时
+                        root = s.top(); //栈顶为当前没有左子树的根节点 s.pop(); //弹出
+                        root = root->right; //往右子树走
+                    }
+                    return res; 
+                }
+            </code>
+        </pre>
+      </p>
+      <h3>二叉树的中序遍历</h3>
+      <p>
+        <pre>
+            <code>
+                vector<int> inorderTraversal(TreeNode *root) {
+                    vector<int> res;
+                    if(root == NULL)
+                        return res;
+                    stack<TreeNode *> s;
+                    while(root != NULL || !s.empty()){
+                        while(root != NULL){
+                            s.push(root);
+                            root = root->left;
+                        }
+                            root = s.top();
+                            res.emplace_back(root->val);
+                            s.pop();
+                            root = root->right;
+                    }
+                    return res; 
+                }
+            </code>
+        </pre>
+      </p>
+      <h3>二叉树的后序遍历</h3>
+      <p>
+        <pre>
+            <code>
+                vector<int> postorderTraversal(TreeNode *root) {
+                    vector<int> res;
+                    if(root == nullptr)
+                        return res;
+                    stack<TreeNode *> st;
+                    TreeNode *work = prev;
+                    while(!st.empty() || root != nullptr){
+                        while(root != nullptr){
+                            st.push(root);
+                            root = root->left;
+                        }
+                        root = st.top();
+                        st.pop();
+                        if(root->right == nullptr || root->right == prev){
+                            res.push_back(root->data);
+                            prev = root;
+                            root = nullptr;
+                        }
+                        else{
+                            st.push(root); // 根结点重新入栈 
+                            root = root->right; //遍历右子树
+                        } 
+                    }
+                    return res;
+                }
+            </code>
+        </pre>
+      </p>
+    </article>
+  </main>
+</body>
+</html>
