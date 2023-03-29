@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>About - My Blog</title>
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+</nav>
+</header>
+  <main>
+    <section>
+      <h2>静态博客总结</h2>
+      <p>
+        静态网页博客是一种不需要后端服务器和数据库支持的网站，只需要使用HTML、CSS和JavaScript等前端技术就可以实现。静态网页博客有很多优点，比如速度快、安全稳定、易于维护等。
+      </p>
+      <p>
+        Gitee Pages 是一个免费的静态网页托管服务，您可以使用 Gitee Pages 托管博客、项目官网等静态网页。如果您使用过 Github Pages 那么您会很快上手使用 Gitee 的 Pages服务。目前 Gitee Pages 支持 Jekyll、Hugo、Hexo编译静态资源。<br>
+        Jekyll、Hugo、Hexo 编译判断依据:<br>
+            编译 Hugo 依据：仓库编译目录下存在config.toml|json|yaml文件和content目录的时候，会使用hugo生成静态文件。
+            编译 Hexo 依据：仓库编译目录下存在package.json，_config.yml文件和scaffolds目录的，会使用hexo generate生成静态文件，由于每次部署编译需要重新克隆编译并进行npm install，所以使用 Hexo 的时间相对 Hugo 和 Jekyll 会长一些。
+            当不符合上述1和2条件的时候，就默认使用Jekyll编译。
+        <br><a href="https://gitee.com/help/articles/4136#article-header0">详细教程与说明</a> <br>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
